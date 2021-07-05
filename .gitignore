@@ -15,3 +15,6 @@
 #System Files
 .DS_Store
 Thumbs.db
+
+# sqlite .db file
+*.db
