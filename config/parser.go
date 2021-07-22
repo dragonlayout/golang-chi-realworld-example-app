@@ -18,12 +18,16 @@ type ServerConfig struct {
 }
 
 type MysqlConfig struct {
-	Address  string `toml:"address"`
-	Port     int    `toml:"port"`
-	User     string `toml:"user"`
-	Password string `toml:"password"`
-	Protocol string `toml:"protocol"`
-	Database string `toml:"database"`
+	Address         string `toml:"address"`
+	Port            int    `toml:"port"`
+	User            string `toml:"user"`
+	Password        string `toml:"password"`
+	Protocol        string `toml:"protocol"`
+	Database        string `toml:"database"`
+	ConnMaxLifetime int    `toml:"conn-max-lifetime"`
+	ConnMaxIdleTime int    `toml:"conn-max-idle-time"`
+	MaxIdleConns    int    `toml:"max-idle-conns"`
+	MaxOpenConns    int    `toml:"max-open-conns"`
 }
 
 func Parse(filepath string) *Config {

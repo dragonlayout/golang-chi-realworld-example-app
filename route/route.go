@@ -3,13 +3,13 @@ package route
 import (
 	"fmt"
 	"github.com/dragonlayout/golang-chi-realworld-example-app/model"
+	"github.com/dragonlayout/golang-chi-realworld-example-app/service"
 	"github.com/gin-gonic/gin"
-	"golang.org/x/crypto/bcrypt"
 	"net/http"
 	"time"
 )
 
-func New() *gin.Engine {
+func New(svc service.UserService) *gin.Engine {
 	// Creates a router without any middleware by default
 	route := gin.New()
 	// Global middleware
@@ -54,14 +54,11 @@ func New() *gin.Engine {
 			return
 		}
 
-		hash, err := bcrypt.GenerateFromPassword([]byte(requestBody.User.Password), bcrypt.DefaultCost)
+		err := svc.Registration(requestBody)
 		if err != nil {
 			fmt.Println(err)
+			return
 		}
-		// TODO: 存储 hash
-		// TODO: 表结构
-		encodePW := string(hash)
-		fmt.Println(encodePW)
 
 		c.JSON(http.StatusOK, gin.H{
 			"user": "response",

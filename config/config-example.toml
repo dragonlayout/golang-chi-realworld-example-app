@@ -10,16 +10,24 @@
 [mysql]
     [mysql.development]
     address = "127.0.0.1"
-    port = 6379
+    port = 3306
     user = "root"
     password = "123456"
     procotol = "tcp"
     database = "real_world"
+    conn-max-lifetime = 10
+    conn-max-idle-time = 5
+    max-open-conns = 10
+    max-idle-conns = 5
 
     [mysql.production]
     address = "127.0.0.1"
-    port = 6379
+    port = 3306
     user = "root"
     password = "123456"
     procotol = "tcp"
     database = "real_world"
+    conn-max-lifetime = 10
+    conn-max-idle-time = 5
+    max-open-conns = 10
+    max-idle-conns = 5

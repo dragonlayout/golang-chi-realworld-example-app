@@ -35,7 +35,7 @@ func main() {
 	}
 
 	// TODO: 2. 组件装配
-	route := assembly.Build(conf)
+	route := assembly.Build(conf, *env)
 
 	// TODO: 3. 启动 http server
 	route.Run(fmt.Sprintf("%s:%d", conf.ServerEnv[*env].ListenAddress, conf.ServerEnv[*env].ListenPort))
