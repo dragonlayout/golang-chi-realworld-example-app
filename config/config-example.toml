@@ -1,0 +1,25 @@
+[server]
+    [server.development]
+    listen-address = "127.0.0.1"
+    listen-port = 8080
+
+    [server.production]
+    listen-address = "127.0.0.1"
+    listen-port = 8080
+
+[mysql]
+    [mysql.development]
+    address = "127.0.0.1"
+    port = 6379
+    user = "root"
+    password = "123456"
+    procotol = "tcp"
+    database = "real_world"
+
+    [mysql.production]
+    address = "127.0.0.1"
+    port = 6379
+    user = "root"
+    password = "123456"
+    procotol = "tcp"
+    database = "real_world"

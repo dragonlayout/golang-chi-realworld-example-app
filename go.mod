@@ -3,7 +3,10 @@ module github.com/dragonlayout/golang-chi-realworld-example-app
 go 1.16
 
 require (
-	github.com/go-chi/chi/v5 v5.0.3
-	github.com/go-chi/render v1.0.1
-	gorm.io/gorm v1.21.11
+	github.com/gin-gonic/gin v1.7.2 // indirect
+	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/mattn/go-isatty v0.0.13 // indirect
+	github.com/modern-go/reflect2 v1.0.1 // indirect
+	github.com/pelletier/go-toml v1.9.3 // indirect
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
 )
